@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mina | Smarter Baby Gear Marketplace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    .color-palette {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    
+    .color-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin: 0 10px;
+    }
+    
+    .color-sage {
+      background-color: #9AAB92;
+    }
+    
+    .color-coral {
+      background-color: #D27B65;
+    }
+    
+    .color-white {
+      background-color: #FFFFFF;
+      border: 1px solid #E0E0E0;
+    }
+    
+    .color-slate {
+      background-color: #4E5361;
+    }
+    @font-face {
+      font-family: 'Recoleta';
+      src: url('https://cdn.jsdelivr.net/gh/studioelsa/fonts@main/recoleta/Recoleta-Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FFF1E9;
+      color: #4E5361;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 30px 15px;
+      }
+    }
+
+    .logo-container {
+      margin-bottom: 30px;
+      position: relative;
+      display: block;
+      text-align: center;
+    }
+    
+    .full-logo {
+      max-width: 450px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    .logo {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .baby-icon {
+      position: absolute;
+      top: -15px;
+      right: calc(50% - 80px);
+      width: 35px;
+      height: 35px;
+    }
+    
+    .baby-icon img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .tagline {
+      font-size: 1.1rem;
+      color: #4E5361;
+      margin: 0 auto 1.5rem;
+      max-width: 450px;
+      line-height: 1.4;
+    }
+
+    h1 {
+      font-family: 'Recoleta', serif;
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+      color: #4E5361;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: normal;
+      margin-bottom: 2rem;
+      color: #4E5361;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      margin: 2rem 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    ul li::before {
+      content: "";
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      margin-right: 12px;
+      background-color: #9AAB92;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      margin: 2rem 0;
+    }
+    
+
+    .form-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    input[type="email"],
+    input[type="text"] {
+      padding: 12px 15px;
+      border: 1px solid #9AAB92;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    
+    input[type="email"] {
+      width: 60%;
+      max-width: 250px;
+    }
+    
+    input[type="text"] {
+      width: 30%;
+      max-width: 120px;
+    }
+
+    @media (max-width: 480px) {
+      .form-row {
+        flex-direction: column;
+        width: 100%;
+      }
+      
+      input[type="email"],
+      input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      
+      button {
+        margin-left: 0;
+        width: 100%;
+      }
+      
+      .full-logo {
+        max-width: 100%;
+        padding: 0 10px;
+      }
+      
+      h2 {
+        font-size: 1.1rem;
+        padding: 0 10px;
+      }
+      
+      .container {
+        padding: 20px 15px;
+      }
+    }
+
+    button {
+      padding: 12px 20px;
+      margin-left: 10px;
+      background-color: #9AAB92;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+      background-color: #7d8c75;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .survey-link {
+      margin-top: 20px;
+      display: block;
+      color: #D27B65;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .survey-link:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #4E5361;
+    }
+
+    .footer a {
+      color: #D27B65;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-container">
+      <img src="mina_full_logo.png" alt="Mina - Your parenting co-pilot for secondhand baby goods & local community" class="full-logo" />
+    </div>
+    
+    <!-- <form action="YOUR_FORM_ENDPOINT" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Join the Waitlist</button>
+    </form> -->
+    
+    <h2>A smarter way to buy and sell baby gear — local, safe, and stress-free</h2>
+
+    <p>Parents deserve better than Facebook Marketplace.</p>
+    <p>We're building a community-driven secondhand platform for baby gear — with trust, smart suggestions, and easy pickups built in.</p>
+
+    <ul>
+      <li>Smart recommendations based on your baby’s age</li>
+      <li>Local, trusted listings (no ghosting or spam)</li>
+      <li>Flexible pickup options that fit your schedule</li>
+      <li>Built by parents, for parents</li>
+    </ul>
+
+    <form id="waitlistForm" action="https://script.google.com/macros/s/AKfycbx95YA7Fz5476KNXdFRWA6SaQTRp-eQQqnELENerb8hFMZLVbeiXBx-m3SXyOhGq193/exec" method="POST">
+      <div class="form-row">
+        <input type="email" name="email" placeholder="Enter your email" required />
+        <input type="text" name="zipcode" placeholder="Zipcode" 
+               pattern="[0-9]{5}" minlength="5" maxlength="5" required />
+      </div>
+      <button type="submit">Join the Waitlist</button>
+    </form>
+
+    <a class="survey-link" href="https://forms.gle/JG4cqigFWM9WSFmq7" target="_blank">Want to help shape Mina? Take our 2-min survey →</a>
+
+    <div class="footer">
+      Questions? Reach out at <a href="mailto:hello@getmina.app">hello@getmina.app</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Show loading state
+      const button = this.querySelector('button');
+      const originalText = button.textContent;
+      button.textContent = 'Submitting...';
+      button.disabled = true;
+      
+      // Get form data
+      const formData = new FormData(this);
+      
+      // Submit form using fetch
+      fetch(this.action, {
+        method: 'POST',
+        body: new URLSearchParams(formData),
+        mode: 'no-cors'
+      })
+      .then(response => {
+        // Reset form
+        this.reset();
+        
+        // Show success message
+        button.textContent = 'Thanks for joining!';
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+        }, 3000);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        button.textContent = 'Please try again';
+        button.disabled = false;
+      });
+    });
+  </script>
+</body>
+</html>
