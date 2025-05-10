@@ -178,6 +178,48 @@
       }
     }
 
+    /* Video Section */
+    .video-section {
+      padding: 80px 20px;
+      text-align: center;
+      background-color: #FFF1E9;
+    }
+
+    .video-section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #2E2E2E;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      max-height: 450px; /* Fixed maximum height for 16:9 ratio with 800px width */
+      margin: 0 auto;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      overflow: hidden;
+    }
+
+    @media (min-width: 1024px) {
+      .video-container {
+        height: 450px;
+        padding-bottom: 0;
+      }
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
     /* Footer */
     .footer {
       text-align: center;
@@ -231,6 +273,20 @@
       </ul>
     </section>
 
+    <!-- Video Section -->
+    <section class="video-section fade-in">
+      <h2>See Mina in Action</h2>
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/aKcGKcunqa4" 
+          title="Mina App Demo" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
     <section id="waitlist" class="signup-section fade-in">
       <h2>Get early access</h2>
       <p class="signup-subtext">Join our waiting list to hear when we launch in your area.</p>
@@ -250,4 +306,35 @@
       <p>Questions? Reach out at  <a href="mailto:hello@getmina.app">hello@getmina.app</a></p>
     </footer>
   </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get the video iframe
+      const videoIframe = document.querySelector('.video-container iframe');
+      
+      // Update the iframe src to include autoplay=0 and mute=1 parameters
+      let videoSrc = videoIframe.src;
+      if (videoSrc.indexOf('?') > -1) {
+        videoSrc += '&autoplay=0&mute=1&enablejsapi=1';
+      } else {
+        videoSrc += '?autoplay=0&mute=1&enablejsapi=1';
+      }
+      videoIframe.src = videoSrc;
+      
+      // Create an Intersection Observer to detect when video is in viewport
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Video is in viewport, play it
+            videoIframe.src = videoIframe.src.replace('autoplay=0', 'autoplay=1');
+            // Stop observing once played
+            observer.unobserve(videoIframe);
+          }
+        });
+      }, { threshold: 0.5 }); // Trigger when 50% of the video is visible
+      
+      // Start observing the video
+      observer.observe(videoIframe);
+    });
+  </script>
 </body>
