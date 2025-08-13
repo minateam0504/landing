@@ -1,336 +1,715 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mina | Smarter Baby Gear Marketplace</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'DM Sans', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #FFF1E9;
-      color: #4E5361;
-      line-height: 1.6;
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 120px 20px 100px;
-      text-align: center;
-      background: linear-gradient(145deg, #FFF1E9 0%, #ffffff 100%);
-    }
-
-    .hero-logo {
-      max-width: 400px;
-      width: 80%;
-      margin-bottom: 40px;
-    }
-
-    .hero h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 3.5rem;
-      color: #4E5361;
-      margin-bottom: 20px;
-    }
-
-    .hero-subtext {
-      font-size: 1.25rem;
-      color: #4E5361;
-      margin-bottom: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Mockup Section */
-    .mockup {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      padding: 80px 20px;
-      background-color: #ffffff;
-      gap: 40px;
-    }
-
-    .mockup img {
-      max-width: 300px;
-      width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    .mockup-text {
-      max-width: 500px;
-      font-size: 1.2rem;
-    }
-
-    .mockup-text h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      color: #2E2E2E;
-    }
-
-    /* Feature List */
-    .features {
-      padding: 60px 20px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .features ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left;
-    }
-
-    .features ul li {
-      font-size: 1.1rem;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-    }
-
-    /* Signup Section */
-    .signup-section {
-      background-color: #DCDFD7;
-      padding: 100px 20px;
-      text-align: center;
-    }
-
-    .signup-section h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 3rem;
-      margin-bottom: 20px;
-      color: #2E2E2E;
-    }
-
-    .signup-subtext {
-      font-size: 1.1rem;
-      color: #4E5361;
-      margin-bottom: 40px;
-    }
-
-    .signup-form-row {
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: center;
-      gap: 12px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .signup-form-row input[type="email"] {
-      padding: 16px 20px;
-      border-radius: 999px;
-      border: 1px solid #CCC;
-      font-size: 1rem;
-      width: 100%;
-      max-width: 280px;
-      box-sizing: border-box;
-    }
-
-    .signup-form-row input[type="text"] {
-      padding: 16px 20px;
-      border-radius: 999px;
-      border: 1px solid #CCC;
-      font-size: 1rem;
-      width: 100px;
-      box-sizing: border-box;
-      flex-shrink: 0;
-    }
-
-    .signup-form-row button {
-      padding: 16px 28px;
-      border-radius: 999px;
-      background-color: #000;
-      color: white;
-      font-size: 1rem;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .signup-form-row button:hover {
-      background-color: #333;
-    }
-
-    @media (max-width: 768px) {
-      .mockup {
-        flex-direction: column;
-        text-align: center;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mina | Smarter Baby Gear Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/recoleta" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              recoleta: ["Recoleta", "serif"],
+              poppins: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              "mina-text": "#4A4656",
+              "mina-bg": "#FAF4F0",
+              "mina-button": "#9B9E8A",
+            },
+            spacing: {
+              18: "4.5rem",
+              88: "22rem",
+              100: "25rem",
+              128: "32rem",
+              144: "36rem",
+              160: "40rem",
+              176: "44rem",
+              192: "48rem",
+              208: "52rem",
+              224: "56rem",
+              240: "60rem",
+              256: "64rem",
+              272: "68rem",
+              288: "72rem",
+              304: "76rem",
+              320: "80rem",
+              336: "84rem",
+              352: "88rem",
+              368: "92rem",
+              384: "96rem",
+              400: "100rem",
+            },
+            borderRadius: {
+              "4xl": "2rem",
+              "5xl": "2.5rem",
+              "6xl": "3rem",
+              "7xl": "3.5rem",
+              "8xl": "4rem",
+              "9xl": "4.5rem",
+              "10xl": "10.25rem",
+            },
+            fontSize: {
+              "5xl": ["3rem", "1"],
+              "6xl": ["4rem", "1"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .decorative-item {
+        z-index: 1;
       }
 
-      .signup-form-row {
-        flex-direction: column;
-        gap: 12px;
+      @import url("https://fonts.cdnfonts.com/css/recoleta");
+
+      .font-recoleta {
+        font-family: "Recoleta", serif !important;
       }
 
-      .signup-section h2 {
-        font-size: 2rem;
+      /* Desktop layout matching Figma exactly */
+      @media (min-width: 1280px) {
+        .desktop-container {
+          width: 1440px;
+          height: 3990px;
+          position: relative;
+          margin: 0 auto;
+        }
       }
-    }
-
-    /* Video Section */
-    .video-section {
-      padding: 80px 20px;
-      text-align: center;
-      background-color: #FFF1E9;
-    }
-
-    .video-section h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      color: #2E2E2E;
-    }
-
-    .video-container {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      max-height: 450px; /* Fixed maximum height for 16:9 ratio with 800px width */
-      margin: 0 auto;
-      height: 0;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-      overflow: hidden;
-    }
-
-    @media (min-width: 1024px) {
-      .video-container {
-        height: 450px;
-        padding-bottom: 0;
-      }
-    }
-
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    /* Footer */
-    .footer {
-      text-align: center;
-      margin-top: 80px;
-      padding: 40px 20px;
-      font-size: 0.95rem;
-      color: #777;
-      border-top: 1px solid #eee;
-    }
-
-    .survey-link {
-      display: inline-block;
-      margin-bottom: 20px;
-      font-size: 1rem;
-      color: #D27B65;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .survey-link:hover {
-      text-decoration: underline;
-    }
-
-    a {
-      color: #D27B65;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-    
-    .social-links {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
-    
-    .social-links a {
-      color: #D27B65;
-      font-size: 24px;
-      transition: transform 0.3s ease;
-    }
-    
-    .social-links a:hover {
-      transform: scale(1.2);
-      text-decoration: none;
-    }
-  </style>
-</head>
-<body>
-  <main>
-    <section class="hero fade-in">
-      <img src="static/mina_logo_2.png" alt="Mina logo" class="hero-logo" />
-      <h1>Local. Trusted. Easy.</h1>
-      <p class="hero-subtext">
-        A smarter way to buy and sell baby gear – with trust, smart suggestions, and stress-free pickup.
-      </p>
-    </section>
-
-    <!-- Video Section -->
-    <section class="video-section fade-in">
-      <div class="video-container">
-        <iframe 
-          src="https://www.youtube.com/embed/aKcGKcunqa4" 
-          title="Mina App Demo" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-      </div>
-    </section>
-
-    <section class="features fade-in">
-      <ul>
-        <li>📸 Easy listing: snap a photo, we fill the rest</li>
-        <li>👶 Smart recommendations based on your baby’s age</li>
-        <li>🤝 Local, trusted listings (no ghosting or spam)</li>
-        <li>🚗 Flexible pickup options that fit your schedule</li>
-        <li>💰 Earn money while decluttering your home</li>
-      </ul>
-    </section>
-
-    <section id="waitlist" class="signup-section fade-in">
-      <h2>Get early access</h2>
-      <p class="signup-subtext">Join our waiting list to hear when we launch in your area.</p>
-      <form id="waitlistForm" action="https://script.google.com/macros/s/AKfycbx95YA7Fz5476KNXdFRWA6SaQTRp-eQQqnELENerb8hFMZLVbeiXBx-m3SXyOhGq193/exec" method="POST">
-        <div class="signup-form-row">
-          <input type="email" name="email" placeholder="Enter your email" required />
-          <input type="text" name="zipcode" placeholder="Zipcode" pattern="[0-9]{5}" minlength="5" maxlength="5" required />
-          <button type="submit">Submit</button>
+    </style>
+  </head>
+  <body class="font-poppins bg-white m-0 p-0 w-full overflow-x-hidden">
+    <div class="desktop-container relative w-full mx-auto bg-white">
+      <!-- Header -->
+      <header
+        class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm flex justify-center items-center z-20 px-4 py-6"
+      >
+        <div
+          class="w-full max-w-6xl xl:max-w-[1440px] flex justify-between items-center xl:px-10"
+        >
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/3367cf64a4d2d662cc8bfaeebaae1688f28badee?width=566"
+            alt="Mina Logo"
+            class="w-48 h-16 sm:w-56 sm:h-20 xl:w-[283px] xl:h-[104px]"
+          />
+          <nav
+            class="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 xl:gap-10"
+          >
+            <a
+              href="#video-section"
+              class="text-mina-text text-base sm:text-lg xl:text-xl font-normal hover:opacity-80 transition-opacity"
+              >About Us</a
+            >
+            <a
+              href="#early-access-section"
+              class="w-60 sm:w-72 xl:w-[321px] h-12 xl:h-[55px] rounded-full bg-white border-2 border-mina-text flex items-center justify-center text-mina-text text-lg sm:text-xl xl:text-2xl font-medium hover:bg-gray-50 transition-colors"
+              >Try out the Beta</a
+            >
+          </nav>
         </div>
-      </form>
-    </section>
+      </header>
 
-    <footer class="footer fade-in">
-      <a class="survey-link" href="https://forms.gle/JG4cqigFWM9WSFmq7" target="_blank">
-        Help shape Mina – take our 5-min survey →
-      </a>
-      <div class="social-links">
-        <a href="https://www.instagram.com/getmina.app/" target="_blank" aria-label="Follow us on Instagram">
-          <i class="fab fa-instagram"></i>
+      <main class="relative pt-10 flex flex-col gap-20 mx-auto">
+        <!-- top absolute section  -->
+        <div class="relative pt-[100px] relative mx-auto">
+          <!-- Hero Section -->
+          <section class="w-full xl:w-[1440px] text-center px-4 mt-16">
+           <div class="relative">
+             <h1
+              class="text-mina-text font-recoleta text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-normal mb-4 sm:mb-6 xl:mb-7"
+            >
+              Local. Trusted. Easy.
+            </h1>
+                 <!-- Item 1: Top left area -->
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/cf6d28dee560907a4aeb0809eb67267ea81835ee?width=206"
+              alt="Decorative"
+              class="decorative-item absolute w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-[103px] xl:h-[103px] transform -rotate-[24deg] left-[5%] top-[-40px] left-[25%] sm:left-[-10%] lg:left-[-15%] lg:top-[-70px] xl:left-[25%] xl:top-[-50px]"
+            />
+           </div>
+            <p
+              class="text-mina-text text-sm sm:text-base md:text-lg xl:text-xl font-normal max-w-sm sm:max-w-md xl:max-w-[478px] mx-auto "
+            >
+              A smarter way to buy and sell baby gear – with trust, smart
+              suggestions, and stress-free pickup.
+            </p>
+          </section>
+
+          <!-- Hero Image -->
+          <div class="relative flex justify-center mt-10" name="hero">
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/ac476d45f4824843d11d4b457b76da1e25092ff0?width=1290"
+              alt="Design Elements"
+              class="w-80 h-80 sm:w-96 sm:h-96 md:w-[500px] md:h-[500px] xl:w-[645px] xl:h-[645px]"
+            />
+            <div>
+              <!-- Item 2: Top right area -->
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/6ba0953686c4cd818d0c21acaffc28a4747bda52?width=255"
+                alt="Decorative"
+                class="decorative-item absolute w-14 h-14 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-28 lg:h-28 xl:w-[127px] xl:h-[127px] transform -rotate-[1deg] top-[-40px] right-[3%] xl:right-[30%]"
+              />
+
+              <!-- Item 3: Top center area -->
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/aa586f0489c91a5211f1ee5d10b839d1b512a426?width=326"
+                alt="Decorative"
+                class="decorative-item absolute w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-[163px] xl:h-[163px] transform rotate-[1deg] top-[-40px] left-[5%] xl:left-[30%] "
+              />
+
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/7d945576eaf0d9cbd9aa86cb8301da2730e4d681?width=195"
+                alt="Decorative"
+                class="decorative-item absolute w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-[97px] xl:h-[97px] transform rotate-[21deg] top-[200px] left-[5%] xl:left-[30%] "
+              />
+            </div>
+          </div>
+
+          <!-- Early Access Section -->
+      <section 
+          class="absolute top-[510px] sm:top-[590px] xl:top-[890px] left-1/2 -translate-x-1/2 
+         w-[90%] sm:w-[500px] lg:w-[700px] xl:w-[1260px] 
+         h-auto xl:h-[910px] bg-mina-bg rounded-3xl sm:rounded-5xl xl:rounded-[164px] 
+         flex flex-col items-center justify-center p-8 sm:p-12"
+            id="early-access-section" 
+>
+            <div class="relative"  >
+              <h2
+                class="text-mina-text font-recoleta text-2xl sm:text-3xl md:text-4xl xl:text-6xl font-normal mb-2 sm:mb-4 xl:mb-3 xl:mt-24"
+              >
+                Get Early Access
+              </h2>
+              <!-- Item 5: Right side middle -->
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/729890aa791a47d7ffa73406d4ce28d4df595e6d?width=206"
+                alt="Decorative"
+                class="decorative-item absolute w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-[103px] xl:h-[103px] top-[-30px] right-[-40px] sm:top-[-50px] lg:top-[-60px] lg:right-[-70px] xl:top-[10px]"
+              />
+            </div>
+
+            <p
+              class="text-mina-text text-sm sm:text-base md:text-lg xl:text-xl font-normal mb-6 sm:mb-8 xl:mb-11 text-center max-w-md xl:max-w-[619px]"
+            >
+              Join our waiting list to hear when we launch in your area.
+            </p>
+
+            <form
+              class="relative  flex flex-col gap-6 sm:gap-7 xl:gap-8 w-full max-w-sm xl:max-w-none xl:w-[390px] "
+           action="https://submit-form.com/Z2m42GEZU">
+
+              <div class="flex flex-col gap-2">
+                <label for="name"
+                  class="text-mina-text text-lg sm:text-xl xl:text-2xl font-medium"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="name" name="name" 
+                  placeholder="Enter your full name"
+                   required=""
+                  class="w-full h-12 sm:h-14 xl:h-[57px] rounded-full border-2 border-mina-text bg-white/60 px-4 sm:px-5 xl:px-5 text-base sm:text-lg xl:text-2xl text-mina-text placeholder:text-mina-text/50 outline-none"
+                />
+              </div>
+
+              <div class="flex flex-col gap-2">
+              <label for="email"
+                  class="text-mina-text text-lg sm:text-xl xl:text-2xl font-medium"
+                  >Email Address</label
+                >
+                <input type="email" id="email" name="email" 
+                  placeholder="Enter your email address"
+                  class="w-full h-12 sm:h-14 xl:h-[57px] rounded-full border-2 border-mina-text bg-white/60 px-4 sm:px-5 xl:px-5 text-base sm:text-lg xl:text-2xl text-mina-text placeholder:text-mina-text/50 outline-none"
+                />
+              </div>
+               <label for="message"  class="text-mina-text text-lg sm:text-xl xl:text-2xl font-medium">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Enter your Message"
+                required=""
+                rows="5" cols="33"
+                  class="w-full h-12 py-2 sm:h-14 xl:h-[57px] rounded-full border-2 border-mina-text bg-white/60 px-4 sm:px-5 xl:px-5 text-base sm:text-lg xl:text-2xl text-mina-text placeholder:text-mina-text/50 outline-none"
+
+              ></textarea>
+
+
+              <div class="flex flex-col gap-2">
+                <label
+                  class="text-mina-text text-lg sm:text-xl xl:text-2xl font-medium"
+                  >Zip Code</label
+                >
+                <input
+                  type="text"
+                  placeholder="Enter your zip code"
+                  class="w-full h-12 sm:h-14 xl:h-[57px] rounded-full border-2 border-mina-text bg-white/60 px-4 sm:px-5 xl:px-5 text-base sm:text-lg xl:text-2xl text-mina-text placeholder:text-mina-text/50  outline-none"
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="w-40 sm:w-48 xl:w-[199px] h-12 sm:h-14 xl:h-[55px] bg-mina-button rounded-full text-white text-lg sm:text-xl xl:text-2xl font-medium mx-auto mt-4 xl:mt-5 hover:opacity-90 transition-opacity"
+              >
+                Sign Up
+              </button>
+
+              <!-- Item 6: Far right decorative get access灰色线条-->
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/56656c11413556836e3a76cc88aec0064526704f?width=363"
+                alt="Decorative"
+                class="decorative-item absolute w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 xl:w-[181px] xl:h-[181px] transform rotate-[20deg] left-[100%] bottom-[-140px] xl:left-[160%]"
+              />
+            </form>
+          </section>
+        </div>
+
+        <!-- About the App Section -->
+        <section
+          class="relative w-full xl:w-[1440px] px-4 xl:px-0 mt-[600px] sm:mt-[700px] lg:mt-[710px] xl:mt-[800px] mx-auto"
+        >
+          <div class="relative">
+            <h2
+              class="text-mina-text font-recoleta text-2xl sm:text-3xl md:text-4xl xl:text-6xl font-normal text-center mb-8 sm:mb-10 xl:mb-10"
+            >
+              About the Mina App
+            </h2>
+            <!-- Item 7: Left side lower -->
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/78351d0495325168d0f183f6163611147fecceb8?width=206"
+              alt="Decorative"
+              class="decorative-item absolute w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-[103px] xl:h-[103px] transform rotate-[-8deg] top-[-40px] left-[25%] lg:left-[30%] lg:top-[-70px] xl:left-[25%] xl:top-[-60px]"
+            />
+
+            <!-- Item 8: Far left decorative -->
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/a7fb964cff9c0f6c9098ac7852b4e561614fc41d?width=255"
+              alt="Decorative"
+              class="decorative-item absolute w-14 h-14 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-28 lg:h-28 xl:w-[128px] xl:h-[128px] transform rotate-[-12deg] top-[20px] left-[5%] lg:left-[5%] xl:left-[5%]"
+            />
+
+      
+          <div
+            class="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 sm:gap-12 lg:gap-16 xl:gap-0 xl:justify-around px-4 sm:px-8 xl:px-[152px] mt-10 sm:mt-20 xl:mt-[180px]"
+          >
+            <div class="text-center max-w-sm xl:max-w-[311px]">
+              <div class="mb-6 sm:mb-8 xl:mb-10 flex justify-center">
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/0a08bf0f6c32f5db110b4b6a0c15410e9605cb22?width=428"
+                  alt="Easy Posting"
+                  class="w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40"
+                />
+              </div>
+              <h3
+                class="text-mina-text text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium mb-3 sm:mb-4 xl:mb-4"
+              >
+                Easy Posting
+              </h3>
+              <p
+                class="text-mina-text text-sm sm:text-base md:text-lg xl:text-xl font-normal leading-normal"
+              >
+                Snap a photo of your baby item and Mina fill the rest! Earn
+                money while decluttering your home.
+              </p>
+            </div>
+
+            <div class="text-center max-w-sm xl:max-w-[311px]">
+              <div class="mb-6 sm:mb-8 xl:mb-10 flex justify-center">
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/a49c899bd0cbae31482373ee8fc115b54bf0c299?width=408"
+                  alt="Time & Place"
+                  class="w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40"
+                />
+              </div>
+              <h3
+                class="text-mina-text text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium mb-3 sm:mb-4 xl:mb-4"
+              >
+                Time & Place
+              </h3>
+              <p
+                class="text-mina-text text-sm sm:text-base md:text-lg xl:text-xl font-normal leading-normal"
+              >
+                Only local, trusted listings. No ghosting or spam! Flexible
+                pickup options that fit your schedule.
+              </p>
+            </div>
+
+            <div class="text-center max-w-sm xl:max-w-[311px]">
+              <div class="mb-6 sm:mb-8 xl:mb-10 flex justify-center">
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/5c9d3e319844d7e998f792794a07e3abdb6234ec?width=432"
+                  alt="Custom Feed"
+                  class="w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40"
+                />
+              </div>
+              <h3
+                class="text-mina-text text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium mb-3 sm:mb-4 xl:mb-4"
+              >
+                Custom Feed
+              </h3>
+              <p
+                class="text-mina-text text-sm sm:text-base md:text-lg xl:text-xl font-normal leading-normal"
+              >
+                Smart recommendations in your feed based on your baby's age.
+              </p>
+            </div>
+          </div>
+
+                  <!-- Item 10: Features section left 线条-->
+        <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/b251fb03c7889628346ac516dc0fcbbf38327edb?width=345"
+          alt="Decorative"
+          class="decorative-item absolute w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-[173px] xl:h-[173px] transform rotate-[-2deg] left-[20%] bottom-[-120px]"
+        />
+
+
+            <!-- Item 11: Features section right 灰色星星 -->
+        <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/5e0782e7da0bb3d62dbc2382aee459b6aad0979d?width=247"
+          alt="Decorative"
+          class="decorative-item absolute w-14 h-14 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-28 lg:h-28 xl:w-[124px] xl:h-[124px] transform rotate-[-19deg] right-[-20px]"
+        />
+
+        <!-- Item 12: Features center small灰色小号十字星星-->
+        <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/30f8ef0daec2725319e5556ff93642d9358d7ca8?width=96"
+          alt="Decorative"
+          class="decorative-item absolute w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-[48px] xl:h-[48px] left-[65%]"
+        />
+
+        <!-- Item 13: Features center medium 灰色中号十字星星-->
+        <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/f816179b92015dcb2015ff2cb0a788987110d549?width=152"
+          alt="Decorative"
+          class="decorative-item absolute w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 xl:w-[76px] xl:h-[76px] left-[68%] bottom-[-30px]"
+        />
+
+        <!-- Item 14: Features left small 橘色小花（左下角） -->
+        <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/95e1d8882e5700ff7fd2f0b599387e4e2fc09176?width=196"
+          alt="Decorative"
+          class="decorative-item absolute w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-[98px] xl:h-[98px] transform rotate-[-34deg] left-[10%] "
+        />
+
+        </section>
+
+        <!-- Video Section -->
+      <div class="relative video-section fade-in w-[90%] max-w-[900px] mx-auto rounded-lg overflow-hidden pt-[56.25%] mt-20" id="video-section">
+          <div class="video-container">
+        <iframe
+          class="absolute top-0 left-0 w-full h-full rounded-lg border-0"
+          src="https://www.youtube.com/embed/aKcGKcunqa4"
+          title="Mina App Demo"
+           frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+</div>
+        </div>
+
+        <!-- Instagram Section -->
+        <section
+          class="relative w-[90%] xl:w-[1260px] h-auto xl:h-[800px] bg-mina-bg rounded-3xl sm:rounded-5xl xl:rounded-[164px] flex flex-col items-center justify-center p-8 sm:p-12 pt-20 mx-auto"
+        >
+          <div class="relative">
+            <h2
+              class="relative text-mina-text font-recoleta text-2xl sm:text-3xl md:text-4xl xl:text-6xl font-normal mb-4 sm:mb-5 xl:mb-5 xl:mt-20 "
+            >
+              Check out our Instagram!
+            </h2>
+
+
+            <!-- Item 8: Far left decorative 灰色星星左边 -->
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/a7fb964cff9c0f6c9098ac7852b4e561614fc41d?width=255"
+              alt="Decorative"
+              class="decorative-item absolute w-14 h-14 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-28 lg:h-28 xl:w-[128px] xl:h-[128px] transform rotate-[-12deg] top-[-100px] left-[-100px] sm:left-[-200px] lg:left-[-200px] xl:left-[-280px]"
+            />
+
+
+            <!-- Item 10: Features section left 线条-->
+        <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/b251fb03c7889628346ac516dc0fcbbf38327edb?width=345"
+          alt="Decorative"
+          class="decorative-item absolute w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-[173px] xl:h-[173px] transform rotate-[-2deg]  top-[-160px] right-[-100px] sm:top-[-140px] lg:top-[-160px] lg:right-[-280px] xl:top-[-160px]"
+        />
+            <!-- Item 17: Instagram section center 发光橘色 字体右上角-->
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/f45bcefcbdf76872b48ff2e5c08fc0f8c15c48ea?width=206"
+              alt="Decorative"
+              class="decorative-item absolute w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-[103px] xl:h-[103px] top-[-30px] right-[-40px] sm:top-[-50px] lg:top-[-60px] lg:right-[-70px] xl:top-[10px]"
+            />
+          </div>
+
+          <!-- <div
+            class="flex flex-wrap sm:flex-nowrap justify-center gap-4 sm:gap-5 xl:gap-5 mb-6 sm:mb-8 xl:mb-10 items-center py-4"
+          >
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/60ee8a784f85ec51dd17bde5747858c6976ac0cb?width=612"
+              alt="Instagram Post 1"
+              class="w-48 h-48 sm:w-40 sm:h-40 md:w-64 md:h-64 xl:w-[306px] xl:h-[306px] rounded-lg"
+            />
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/2fb0f605d3e4d9bf7fd6793b8ab6b7cb19369c27?width=614"
+              alt="Instagram Post 2"
+              class="w-48 h-48 sm:w-40 sm:h-40 md:w-64 md:h-64 xl:w-[307px] xl:h-[309px] rounded-lg"
+            />
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/715915274c7c6cc853d0910089aeaf0bd7f6323b?width=612"
+              alt="Instagram Post 3"
+              class="w-48 h-48 sm:w-40 sm:h-40 md:w-64 md:h-64 xl:w-[306px] xl:h-[306px] rounded-lg"
+        
+
+          </div> -->
+
+      <!-- auto sync with Instagram  -->
+          <div class="w-full mb-6 sm:mb-8 xl:mb-10 py-4">
+                      <!-- LightWidget WIDGET -->
+                    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+                    <iframe src="//lightwidget.com/widgets/4385be123a3852ada009aab6710f850d.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;
+          ;"></iframe>
+          </div>
+        
+
+          <p
+            class="text-mina-text text-sm sm:text-base md:text-lg xl:text-xl font-normal mb-6 sm:mb-8 xl:mb-11 text-center max-w-md xl:max-w-[477px]"
+          >
+            Be up to date on our latest events and annoucements!
+          </p>
+
+          <a 
+          href="https://www.instagram.com/getmina.app/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-40 sm:w-48 xl:w-[199px] py-3 sm:py-4 
+                bg-mina-button rounded-full text-white text-lg sm:text-xl 
+                font-medium hover:opacity-90 transition-opacity mb-10 
+                inline-block text-center"
+        >
+          Follow Now
         </a>
-      </div>
-      <p>Questions? Reach out at <a href="mailto:hello@getmina.app">hello@getmina.app</a></p>
-    </footer>
-  </main>
 
-  <script>
+
+          <!-- Item 19: Footer right 橘色小花右边-->
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/5545dbd09261b775d95f569a5725723cca31b981?width=200"
+            alt="Decorative"
+            class="decorative-item absolute w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-[100px] xl:h-[100px] bottom-[-50px] right-[-40px] sm:bottom-[-65px] lg:bottom-[-70px] lg:right-[-70px] xl:bottom-[10px]"
+          />
+
+          <!-- Item 18: Footer left small 十字星星小号左边-->
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/30f8ef0daec2725319e5556ff93642d9358d7ca8?width=96"
+            alt="Decorative"
+            class="decorative-item absolute w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-[48px] xl:h-[48px] bottom-[-50px] left-[-10px] sm:bottom-[-65px] lg:bottom-[-50px] lg:left-[-10px] xl:bottom-[10px]"
+          />
+
+          <!-- Item 20: Footer left medium 十字星星中号左边-->
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/d1cee8d1aff697b1687e4e165105619fff4b9c5e?width=142"
+            alt="Decorative"
+            class="decorative-item absolute w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-[71px] xl:h-[71px] bottom-[-40px] left-[10px] sm:bottom-[-45px] lg:bottom-[-80px] lg:left-[30px] xl:bottom-[-50px]"
+          />
+        </section>
+
+        <!-- Footer -->
+        <footer
+          class="relative w-full h-auto xl:h-[180px] bg-mina-bg flex justify-center py-10"
+        >
+          <div
+            class="w-full max-w-6xl xl:max-w-[1440px] flex flex-col sm:flex-row xl:flex-row items-center justify-between px-4 xl:px-[54px] gap-6 xl:gap-0"
+          >
+            <div
+              class="flex flex-col items-center xl:items-start gap-4 xl:gap-12"
+            >
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/3367cf64a4d2d662cc8bfaeebaae1688f28badee?width=566"
+                alt="Mina Logo"
+                class="w-48 h-16 sm:w-56 sm:h-20 xl:w-[283px] xl:h-[104px]"
+              />
+              <p
+                class="text-mina-text text-sm sm:text-base md:text-lg xl:text-xl font-normal text-center xl:text-left"
+              >
+                Copyright © 2025 Mina, Inc.
+              </p>
+            </div>
+            <div
+              class="flex flex-col items-center xl:items-end gap-4 xl:gap-12"
+            >
+              <div
+                class="flex flex-col sm:flex-row gap-4 sm:gap-6 xl:gap-11 text-center xl:text-right"
+              >
+                <a
+                  href="#"
+                  class="text-mina-text text-sm sm:text-base md:text-lg xl:text-xl font-normal hover:opacity-80 transition-opacity"
+                  >Legal Information</a
+                >
+                <a
+                  href="#"
+                  class="text-mina-text text-sm sm:text-base md:text-lg xl:text-xl font-normal hover:opacity-80 transition-opacity"
+                  >Privacy Policy</a
+                >
+              </div>
+            </div>
+          </div>
+        </footer>
+      </main>
+
+      <!-- Decorative Items - Visible on ALL screen sizes with exact positioning -->
+      <div class="absolute top-0 left-0 w-full h-full pointer-events-none z-10">
+        <!-- All decorative items maintain exact Figma positioning and rotation -->
+
+        <!-- Item 1: Top left area -->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/cf6d28dee560907a4aeb0809eb67267ea81835ee?width=206"
+          alt="Decorative"
+          class="decorative-item absolute w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-[103px] xl:h-[103px] transform -rotate-[24deg] left-[18%] top-40 sm:top-40 md:top-40 lg:top-44 lg:left-[25%] xl:left-[25%] xl:top-55"
+        /> -->
+
+        <!-- Item 2: Top right area -->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/6ba0953686c4cd818d0c21acaffc28a4747bda52?width=255"
+          alt="Decorative"
+          class="decorative-item absolute w-14 h-14 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-28 lg:h-28 xl:w-[127px] xl:h-[127px] transform -rotate-[1deg] right-[25%] top-80 sm:top-52 md:top-56 lg:top-60 xl:left-[839px] xl:top-[322px]"
+        /> -->
+
+        <!-- Item 3: Top center area -->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/aa586f0489c91a5211f1ee5d10b839d1b512a426?width=326"
+          alt="Decorative"
+          class="decorative-item absolute w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-[163px] xl:h-[163px] transform rotate-[1deg] left-[27%] top-[280px] sm:top-52 md:top-56 lg:top-60 xl:left-[392px] xl:top-[322px]"
+        /> -->
+
+        <!-- Item 4: Left side middle -->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/7d945576eaf0d9cbd9aa86cb8301da2730e4d681?width=195"
+          alt="Decorative"
+          class="decorative-item absolute w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-[97px] xl:h-[97px] transform rotate-[21deg] left-[25%] top-96 sm:top-112 md:top-128 lg:top-144 xl:left-[358px] xl:top-[649px]"
+        /> -->
+
+        <!-- Item 5: Right side middle -->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/729890aa791a47d7ffa73406d4ce28d4df595e6d?width=206"
+          alt="Decorative"
+          class="decorative-item absolute w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-[103px] xl:h-[103px] left-[62%] top-[480px] sm:top-[520px] md:top-[560px] lg:top-[600px] xl:left-[888px] xl:top-[805px]"
+        /> -->
+
+        <!-- Item 6: Far right decorative -->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/56656c11413556836e3a76cc88aec0064526704f?width=363"
+          alt="Decorative"
+          class="decorative-item absolute w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 xl:w-[181px] xl:h-[181px] transform rotate-[20deg] left-[79%] top-[800px] sm:top-[900px] md:top-[1000px] lg:top-[1100px] xl:left-[1133px] xl:top-[1430px]"
+        /> -->
+
+        <!-- Item 7: Left side lower -->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/78351d0495325168d0f183f6163611147fecceb8?width=206"
+          alt="Decorative"
+          class="decorative-item absolute w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-[103px] xl:h-[103px] transform rotate-[-158deg] left-[26%] top-[750px] sm:top-[850px] md:top-[950px] lg:top-[1050px] xl:left-[381px] xl:top-[1590px]"
+        /> -->
+
+        <!-- Item 8: Far left decorative -->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/a7fb964cff9c0f6c9098ac7852b4e561614fc41d?width=255"
+          alt="Decorative"
+          class="decorative-item absolute w-14 h-14 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-28 lg:h-28 xl:w-[128px] xl:h-[128px] transform rotate-[-12deg] left-[3%] top-[780px] sm:top-[880px] md:top-[980px] lg:top-[1080px] xl:left-[48px] xl:top-[1661px]"
+        /> -->
+
+        <!-- Item 9: Far right lower -->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/eacfc63eeeb80a4b5f1cc6ee06a7a07d8d94a21c?width=228"
+          alt="Decorative"
+          class="decorative-item absolute w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-[114px] xl:h-[114px] left-[89%] top-[820px] sm:top-[920px] md:top-[1020px] lg:top-[1120px] xl:left-[1274px] xl:top-[1713px]"
+        /> -->
+
+        <!-- Item 10: Features section left 线条-->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/b251fb03c7889628346ac516dc0fcbbf38327edb?width=345"
+          alt="Decorative"
+          class="decorative-item absolute w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-[173px] xl:h-[173px] transform rotate-[-32deg] left-[17%] top-[1200px] sm:top-[1400px] md:top-[1600px] lg:top-[1800px] xl:left-[239px] xl:top-[2138px]"
+        /> -->
+
+        <!-- Item 11: Features section right 灰色星星 -->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/5e0782e7da0bb3d62dbc2382aee459b6aad0979d?width=247"
+          alt="Decorative"
+          class="decorative-item absolute w-14 h-14 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-28 lg:h-28 xl:w-[124px] xl:h-[124px] transform rotate-[-19deg] left-[86%] top-[1200px] sm:top-[1400px] md:top-[1600px] lg:top-[1800px] xl:left-[1240px] xl:top-[2140px]"
+        /> -->
+
+        <!-- Item 12: Features center small灰色小号十字星星-->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/30f8ef0daec2725319e5556ff93642d9358d7ca8?width=96"
+          alt="Decorative"
+          class="decorative-item absolute w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-[48px] xl:h-[48px] left-[57%] top-[1240px] sm:top-[1440px] md:top-[1640px] lg:top-[1840px] xl:left-[822px] xl:top-[2206px]"
+        /> -->
+
+        <!-- Item 13: Features center medium 灰色中号十字星星-->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/f816179b92015dcb2015ff2cb0a788987110d549?width=152"
+          alt="Decorative"
+          class="decorative-item absolute w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 xl:w-[76px] xl:h-[76px] left-[60%] top-[1200px] sm:top-[1400px] md:top-[1600px] lg:top-[1800px] xl:left-[860px] xl:top-[2139px]"
+        /> -->
+
+        <!-- Item 14: Features left small 橘色小花（左下角） -->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/95e1d8882e5700ff7fd2f0b599387e4e2fc09176?width=196"
+          alt="Decorative"
+          class="decorative-item absolute w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-[98px] xl:h-[98px] transform rotate-[-34deg] left-[6%] top-[1280px] sm:top-[1480px] md:top-[1680px] lg:top-[1880px] xl:left-[80px] xl:top-[2215px]"
+        /> -->
+
+        <!-- Item 15: Instagram section left 灰色星星->
+        <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/03fe6e81da6d217a1c9d1dca6796da0fd073377e?width=194"
+          alt="Decorative"
+          class="decorative-item absolute w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-[97px] xl:h-[97px] transform rotate-[-19deg] left-[3%] top-[1600px] sm:top-[1900px] md:top-[2200px] lg:top-[2400px] xl:left-[37px] xl:top-[2813px]"
+        />
+
+        <!-- Item 16: Instagram section right 线条 右下角-->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/ac847b7d442ade99e76c6d8aa1db1e3c3b7b20b2?width=214"
+          alt="Decorative"
+          class="decorative-item absolute w-12 h-12 sm:w-14 sm:h-14 md:w-18 md:h-18 lg:w-22 lg:h-22 xl:w-[107px] xl:h-[107px] transform rotate-[13deg] left-[85%] top-[1700px] sm:top-[2000px] md:top-[2300px] lg:top-[2500px] xl:left-[1228px] xl:top-[2898px]"
+        /> -->
+
+        <!-- Item 17: Instagram section center 发光橘色 字体右上角-->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/f45bcefcbdf76872b48ff2e5c08fc0f8c15c48ea?width=206"
+          alt="Decorative"
+          class="decorative-item absolute w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-[103px] xl:h-[103px] left-[71%] top-[1800px] sm:top-[2100px] md:top-[2400px] lg:top-[2600px] xl:left-[1027px] xl:top-[3033px]"
+        /> -->
+
+        <!-- Item 18: Footer left small 十字星星小号左边-->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/30f8ef0daec2725319e5556ff93642d9358d7ca8?width=96"
+          alt="Decorative"
+          class="decorative-item absolute w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-[48px] xl:h-[48px] left-[4%] top-[2400px] sm:top-[2800px] md:top-[3200px] lg:top-[3400px] xl:left-[54px] xl:top-[3681px]"
+        /> -->
+
+        <!-- Item 19: Footer right 橘色小花右边-->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/5545dbd09261b775d95f569a5725723cca31b981?width=200"
+          alt="Decorative"
+          class="decorative-item absolute w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-[100px] xl:h-[100px] left-[91%] top-[2420px] sm:top-[2820px] md:top-[3220px] lg:top-[3420px] xl:left-[1307px] xl:top-[3695px]"
+        /> -->
+
+        <!-- Item 20: Footer left medium 十字星星中号左边-->
+        <!-- <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/d1cee8d1aff697b1687e4e165105619fff4b9c5e?width=142"
+          alt="Decorative"
+          class="decorative-item absolute w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-[71px] xl:h-[71px] left-[6%] top-[2440px] sm:top-[2840px] md:top-[3240px] lg:top-[3440px] xl:left-[89px] xl:top-[3709px]"
+        /> -->
+      </div>
+    </div>
+  </body>
+
+    <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Get the video iframe
       const videoIframe = document.querySelector('.video-container iframe');
@@ -360,4 +739,4 @@
       observer.observe(videoIframe);
     });
   </script>
-</body>
+</html>
