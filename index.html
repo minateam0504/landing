@@ -147,7 +147,7 @@
           <!-- Hero Image -->
           <div class="relative flex justify-center mt-10" name="hero">
             <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/ac476d45f4824843d11d4b457b76da1e25092ff0?width=1290"
+              src="/static/hero_phone.gif"
               alt="Design Elements"
               class="w-80 h-80 sm:w-96 sm:h-96 md:w-[500px] md:h-[500px] xl:w-[645px] xl:h-[645px]"
             />
@@ -176,7 +176,7 @@
 
           <!-- Early Access Section -->
       <section 
-          class="absolute top-[510px] sm:top-[590px] xl:top-[890px] left-1/2 -translate-x-1/2 
+          class="absolute top-[510px] sm:top-[560px] xl:top-[800px] left-1/2 -translate-x-1/2 
          w-[90%] sm:w-[500px] lg:w-[700px] xl:w-[1260px] 
          h-auto xl:h-[910px] bg-mina-bg rounded-3xl sm:rounded-5xl xl:rounded-[164px] 
          flex flex-col items-center justify-center p-8 sm:p-12"
@@ -202,78 +202,73 @@
               Join our waiting list to hear when we launch in your area.
             </p>
 
-            <form
-              class="relative  flex flex-col gap-6 sm:gap-7 xl:gap-8 w-full max-w-sm xl:max-w-none xl:w-[390px] "
-           action="https://submit-form.com/Z2m42GEZU">
+    <form
+    id="waitlistForm"
+    class="relative flex flex-col gap-6 sm:gap-7 xl:gap-8 w-full max-w-sm xl:max-w-none xl:w-[390px]"
+    action="https://script.google.com/macros/s/AKfycbx95YA7Fz5476KNXdFRWA6SaQTRp-eQQqnELENerb8hFMZLVbeiXBx-m3SXyOhGq193/exec"
+    method="POST"
+  >
 
-              <div class="flex flex-col gap-2">
-                <label for="name"
-                  class="text-mina-text text-lg sm:text-xl xl:text-2xl font-medium"
-                  >Name</label
-                >
-                <input
-                  type="text"
-                  id="name" name="name" 
-                  placeholder="Enter your full name"
-                   required=""
-                  class="w-full h-12 sm:h-14 xl:h-[57px] rounded-full border-2 border-mina-text bg-white/60 px-4 sm:px-5 xl:px-5 text-base sm:text-lg xl:text-2xl text-mina-text placeholder:text-mina-text/50 outline-none"
-                />
-              </div>
-
-              <div class="flex flex-col gap-2">
-              <label for="email"
-                  class="text-mina-text text-lg sm:text-xl xl:text-2xl font-medium"
-                  >Email Address</label
-                >
-                <input type="email" id="email" name="email" 
-                  placeholder="Enter your email address"
-                  class="w-full h-12 sm:h-14 xl:h-[57px] rounded-full border-2 border-mina-text bg-white/60 px-4 sm:px-5 xl:px-5 text-base sm:text-lg xl:text-2xl text-mina-text placeholder:text-mina-text/50 outline-none"
-                />
-              </div>
-               <label for="message"  class="text-mina-text text-lg sm:text-xl xl:text-2xl font-medium">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Enter your Message"
-                required=""
-                rows="5" cols="33"
-                  class="w-full h-12 py-2 sm:h-14 xl:h-[57px] rounded-full border-2 border-mina-text bg-white/60 px-4 sm:px-5 xl:px-5 text-base sm:text-lg xl:text-2xl text-mina-text placeholder:text-mina-text/50 outline-none"
-
-              ></textarea>
+  <div class="flex flex-col gap-2">
+    <label for="name" class="text-mina-text text-lg sm:text-xl xl:text-2xl font-medium">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Enter your full name"
+      required
+      class="w-full h-12 sm:h-14 xl:h-[57px] rounded-full border-2 border-mina-text bg-white/60 px-4 sm:px-5 xl:px-5 text-base sm:text-lg xl:text-2xl text-mina-text placeholder:text-mina-text/50 outline-none"
+    />
+  </div>
 
 
-              <div class="flex flex-col gap-2">
-                <label
-                  class="text-mina-text text-lg sm:text-xl xl:text-2xl font-medium"
-                  >Zip Code</label
-                >
-                <input
-                  type="text"
-                  placeholder="Enter your zip code"
-                  class="w-full h-12 sm:h-14 xl:h-[57px] rounded-full border-2 border-mina-text bg-white/60 px-4 sm:px-5 xl:px-5 text-base sm:text-lg xl:text-2xl text-mina-text placeholder:text-mina-text/50  outline-none"
-                />
-              </div>
+  <div class="flex flex-col gap-2">
+    <label for="email" class="text-mina-text text-lg sm:text-xl xl:text-2xl font-medium">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email address" required
+      class="w-full h-12 sm:h-14 xl:h-[57px] rounded-full border-2 border-mina-text bg-white/60 px-4 sm:px-5 xl:px-5 text-base sm:text-lg xl:text-2xl text-mina-text placeholder:text-mina-text/50 outline-none" />
+  </div>
 
-              <button
-                type="submit"
-                class="w-40 sm:w-48 xl:w-[199px] h-12 sm:h-14 xl:h-[55px] bg-mina-button rounded-full text-white text-lg sm:text-xl xl:text-2xl font-medium mx-auto mt-4 xl:mt-5 hover:opacity-90 transition-opacity"
-              >
-                Sign Up
-              </button>
+  <div class="flex flex-col gap-2">
+    <label for="zipcode" class="text-mina-text text-lg sm:text-xl xl:text-2xl font-medium">Zip Code</label>
+    <input type="text" id="zipcode" name="zipcode" placeholder="Enter your zip code" pattern="[0-9]{5}" minlength="5" maxlength="5" required
+      class="w-full h-12 sm:h-14 xl:h-[57px] rounded-full border-2 border-mina-text bg-white/60 px-4 sm:px-5 xl:px-5 text-base sm:text-lg xl:text-2xl text-mina-text placeholder:text-mina-text/50 outline-none" />
+  </div>
 
-              <!-- Item 6: Far right decorative get access灰色线条-->
-              <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/56656c11413556836e3a76cc88aec0064526704f?width=363"
-                alt="Decorative"
-                class="decorative-item absolute w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 xl:w-[181px] xl:h-[181px] transform rotate-[20deg] left-[100%] bottom-[-140px] xl:left-[160%]"
-              />
-            </form>
+  <!-- Sign Up 按钮 -->
+  <button type="submit" class="w-40 sm:w-48 xl:w-[199px] h-12 sm:h-14 xl:h-[55px] bg-mina-button rounded-full text-white text-lg sm:text-xl xl:text-2xl font-medium mx-auto mt-4 xl:mt-5 hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+    <span class="button-text">Sign Up</span>
+    <svg class="spinner hidden w-5 h-5 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+    </svg>
+  </button>
+
+<!-- 可爱提示弹窗 -->
+<div id="formMessage" class="fixed inset-0 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-opacity duration-300">
+  <div class="bg-white rounded-2xl p-6 max-w-sm w-full transform translate-y-10 transition-transform duration-300 shadow-lg">
+    <p id="formMessageText" class="text-center text-lg sm:text-xl xl:text-2xl text-mina-text mb-4"></p>
+    <button id="formMessageClose" class="px-6 py-2 bg-mina-button text-white rounded-full hover:opacity-90 transition-opacity mx-auto block">Close</button>
+  </div>
+</div>
+
+
+  <!-- 装饰图 -->
+  <img
+    src="https://api.builder.io/api/v1/image/assets/TEMP/56656c11413556836e3a76cc88aec0064526704f?width=363"
+    alt="Decorative"
+    class="decorative-item absolute w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 xl:w-[181px] xl:h-[181px] transform rotate-[20deg] left-[100%] bottom-[-140px] xl:left-[160%]"
+  />
+</form>
+
+
+
+
           </section>
         </div>
 
         <!-- About the App Section -->
         <section
-          class="relative w-full xl:w-[1440px] px-4 xl:px-0 mt-[600px] sm:mt-[700px] lg:mt-[710px] xl:mt-[800px] mx-auto"
+          class="relative w-full xl:w-[1440px] px-4 xl:px-0 mt-[450px] sm:mt-[550px] lg:mt-[560px] xl:mt-[850px] mx-auto"
         >
           <div class="relative">
             <h2
@@ -709,6 +704,77 @@
     </div>
   </body>
 
+
+    <!-- form  -->
+
+      <script>
+      const form = document.getElementById('waitlistForm');
+      const submitButton = form.querySelector('button[type="submit"]');
+      const buttonText = submitButton.querySelector('.button-text');
+      const spinner = submitButton.querySelector('.spinner');
+      const messageBox = document.getElementById('formMessage');
+      const messageText = document.getElementById('formMessageText');
+      const messageClose = document.getElementById('formMessageClose');
+
+      let autoCloseTimer = null;
+
+      const showMessage = (text) => {
+        messageText.textContent = text;
+        messageBox.classList.remove('pointer-events-none', 'opacity-0');
+        messageBox.firstElementChild.classList.remove('translate-y-10');
+
+        if (autoCloseTimer) clearTimeout(autoCloseTimer);
+        autoCloseTimer = setTimeout(() => {
+          hideMessage();
+        }, 3000);
+      };
+
+      const hideMessage = () => {
+        messageBox.classList.add('opacity-0');
+        messageBox.firstElementChild.classList.add('translate-y-10');
+        setTimeout(() => {
+          messageBox.classList.add('pointer-events-none');
+        }, 300);
+      };
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // 显示 spinner，禁用按钮
+        buttonText.textContent = 'Sending…';
+        spinner.classList.remove('hidden');
+        submitButton.disabled = true;
+
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+          });
+
+          const result = await response.json();
+
+          if (result.result === "success") {
+            showMessage(result.message || "Thank you for joining our waitlist!");
+          } else {
+            showMessage(result.message || "Something went wrong. Please try again.");
+          }
+        } catch (error) {
+          showMessage("Error submitting the form. Please try again.");
+          console.error(error);
+        } finally {
+          // 恢复按钮状态
+          buttonText.textContent = 'Sign Up';
+          spinner.classList.add('hidden');
+          submitButton.disabled = false;
+        }
+      });
+
+      messageClose.addEventListener('click', hideMessage);
+      </script>
+
+  <!-- video auto play  -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Get the video iframe
