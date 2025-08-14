@@ -66,6 +66,11 @@
       };
     </script>
     <style>
+      html, body {
+  overflow-x: hidden;
+      }
+
+
       .decorative-item {
         z-index: 1;
       }
@@ -80,11 +85,15 @@
       @media (min-width: 1280px) {
         .desktop-container {
           width: 1440px;
-          height: 3990px;
-          position: relative;
-          margin: 0 auto;
         }
       }
+      @media (max-width: 1279px) {
+      .desktop-container {
+        width: 100% !important;
+      }
+    }
+
+
 
       .instagram-media {
   all: unset !important; 
@@ -116,19 +125,19 @@
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/3367cf64a4d2d662cc8bfaeebaae1688f28badee?width=566"
             alt="Mina Logo"
-            class="w-48 h-16 sm:w-56 sm:h-20 xl:w-[283px] xl:h-[104px]"
+class="w-32 h-12 sm:w-48 sm:h-16 xl:w-[283px] xl:h-[104px]"
           />
           <nav
             class="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 xl:gap-10"
           >
             <a
               href="#video-section"
-              class="text-mina-text text-base sm:text-lg xl:text-xl font-normal hover:opacity-80 transition-opacity"
+              class="text-mina-text text-sm sm:text-base xl:text-xl font-normal hover:opacity-80 transition-opacity"
               >About Us</a
             >
             <a
               href="#early-access-section"
-              class="w-60 sm:w-72 xl:w-[321px] h-12 xl:h-[55px] rounded-full bg-white border-2 border-mina-text flex items-center justify-center text-mina-text text-lg sm:text-xl xl:text-2xl font-medium hover:bg-gray-50 transition-colors"
+              class="w-[130px] sm:w-72 xl:w-[321px] h-12 xl:h-[55px] rounded-full bg-white border-2 border-mina-text flex items-center justify-center text-mina-text text-sm sm:text-base xl:text-2xl font-medium hover:bg-gray-50 transition-colors"
               >Try out the Beta</a
             >
           </nav>
