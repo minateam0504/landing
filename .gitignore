@@ -57,3 +57,13 @@ desktop.ini
 
 
 CLAUDE.md
+
+node_modules/
+build/
+dist/
+coverage/
+*.log
+.env*
+!.env.example
+node_modules
+dist
